@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoices</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="media-query.css" />
+  </head>
+  <body>
+    <div class="modal">
+      <div class="modal-content">
+        <form id="invoice-form">
+          <div class="modal-title">
+            <h2>New Invoice</h2>
+          </div>
+          <div class="invoice-info">
+            <div class="bill-from">
+              <h4>Bill From</h4>
+              <div class="from-street-addr">
+                <p>Street Address</p>
+                <input type="text" id="from-street" />
+              </div>
+              <div class="from-rest-addr">
+                <div>
+                  <p>City</p>
+                  <input type="text" name="" id="from-city" />
+                </div>
+                <div>
+                  <p>Post Code</p>
+                  <input type="text" name="" id="from-post" />
+                </div>
+                <div>
+                  <p>Country</p>
+                  <input type="text" name="" id="from-country" />
+                </div>
+              </div>
+            </div>
+            <div class="bill-to">
+              <h4>Bill To</h4>
+              <div class="client-info">
+                <p>Client's Name</p>
+                <input type="text" name="" id="client-name" />
+                <br />
+                <br />
+                <p>Client's Email</p>
+                <input type="text" name="" id="client-email" />
+              </div>
+              <div class="to-street-addr">
+                <p>Street Address</p>
+                <input type="text" id="to-street" />
+              </div>
+              <div class="to-rest-addr">
+                <div>
+                  <p>City</p>
+                  <input type="text" name="" id="to-city" />
+                </div>
+                <div>
+                  <p>Post Code</p>
+                  <input type="text" name="" id="to-post" />
+                </div>
+                <div>
+                  <p>Country</p>
+                  <input type="text" name="" id="to-country" />
+                </div>
+              </div>
+            </div>
+            <div class="date-terms-desc">
+              <div class="date-terms">
+                <div class="modal-date">
+                  <p>Invoice Date</p>
+                  <input type="date" name="" id="invoice-date" />
+                </div>
+                <div class="modal-terms">
+                  <p>Payment Terms</p>
+                  <select name="payment-terms" class="payment-date">
+                    <option value="1">Next 1 Day</option>
+                    <option value="7">Next 7 Days</option>
+                    <option value="14">Next 14 Days</option>
+                    <option value="30">Next 30 Days</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-desc">
+                <p>Project Description</p>
+                <input type="text" name="" id="project-desc" />
+              </div>
+            </div>
+          </div>
+          <div class="item-list">
+            <h3>Item List</h3>
+            <div class="item-info">
+              <div>
+                <p>Item Name</p>
+                <input type="text" name="" id="item-name" />
+              </div>
+              <div class="item-qty">
+                <p>Qty.</p>
+                <input type="number" name="" id="item-qty" />
+              </div>
+              <div>
+                <p>Price</p>
+                <input type="number" name="" id="item-price" />
+              </div>
+              <div>
+                <p>Total</p>
+                <input disabled type="number" name="" id="total" />
+              </div>
+              <button class="item-bin">
+                <i class="ri-delete-bin-5-fill"></i>
+              </button>
+            </div>
+            <button type="button" class="add-item">
+              <i class="ri-add-fill"></i> Add New Item
+            </button>
+          </div>
+          <div class="modal-buttons">
+            <div class="modal-delete">
+              <button type="button" class="delete-btn">Discard</button>
+            </div>
+            <div class="modal-save">
+              <button type="button" class="draft-btn">Save as Draft</button>
+              <button class="send-btn">Save & Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <main>
+      <div class="left-panel">
+        <div class="panel-logo">
+          <img src="/image.webp" alt="" />
+        </div>
+        <div class="theme-mode">
+          <i class="ri-moon-fill"></i>
+        </div>
+        <div class="prof-pic">
+          <img src="/image (1).webp" alt="" />
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="header">
+          <div class="header-title">
+            <h1>Invoices</h1>
+            <p>
+              There are total <span id="invoice-length"></span><br />
+              invoices
+            </p>
+          </div>
+          <div class="header-actions">
+            <div class="filter-action">
+              <h4>Filter by status</h4>
+              <i class="ri-arrow-drop-down-fill"></i>
+              <div class="filter-drop-down">
+                <div class="drop">
+                  <input type="checkbox" name="" id="filter-one" />
+                  <p>Draft</p>
+                </div>
+                <div class="drop">
+                  <input type="checkbox" name="" id="check-two" />
+                  <p>Pending</p>
+                </div>
+                <div class="drop">
+                  <input type="checkbox" name="" id="check-three" />
+                  <p>Paid</p>
+                </div>
+              </div>
+            </div>
+            <div class="button-action">
+              <button class="new-invoice">
+                <i class="ri-add-fill"></i> New Invoice
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="invoice-container">
+          <!-- <div class="invoice">
+            <div class="invoice-left">
+              <div class="invoice-id">
+                <span>#</span>
+                <h4>EI3198</h4>
+              </div>
+              <div class="due-date"><p>Due 2/24/2025</p></div>
+              <div class="order-name"><p>Jane Moise</p></div>
+            </div>
+            <div class="invoice-right">
+              <div class="invoice-amount"><h4>$ 1,800,000.00</h4></div>
+              <div class="invoice-status">
+                <p class="dot"><i class="ri-circle-fill"></i></p>
+                <p>Paid</p>
+              </div>
+            </div>
+          </div>
+          <div class="invoice"></div>
+          <div class="invoice"></div> -->
+        </div>
+        <div class="no-inv">
+          <img src="./no-invoice.webp" alt="" />
+          <h3>NO INVOICES.</h3>
+        </div>
+      </div>
+    </main>
+    <script src="/index.js"></script>
+  </body>
+</html>

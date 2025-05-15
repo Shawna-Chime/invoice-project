@@ -1,0 +1,655 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan";
+}
+
+:root {
+  --accent-color: rgb(136 142 176);
+  --accent-color-2: rgb(124 93 250);
+  --accent-color-3: rgb(126 136 195);
+}
+
+/* Modal */
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 20, 20, 0.3);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: none;
+  overflow-y: scroll;
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 50%;
+  padding: 25px;
+  margin: auto;
+}
+
+.modal-content h4 {
+  color: var(--accent-color-2);
+}
+.modal-content p {
+  color: var(--accent-color);
+}
+
+.modal-title {
+  padding: 20px 0px 10px 0px;
+}
+
+.invoice-info {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input,
+select {
+  padding: 10px 0px;
+}
+
+.bill-from,
+.bill-to {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.from-street-addr input,
+.to-street-addr input,
+.client-info input {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.from-rest-addr,
+.to-rest-addr {
+  display: flex;
+  gap: 10px;
+}
+.from-rest-addr input,
+.to-rest-addr input {
+  width: 100%;
+  padding: 10px 6px;
+  margin-top: 10px;
+}
+
+.date-terms-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.date-terms {
+  display: flex;
+  gap: 25px;
+}
+.modal-date,
+.modal-terms {
+  width: 50%;
+}
+.date-terms input,
+select {
+  width: 100%;
+  margin-top: 10px;
+}
+.date-terms select {
+  padding: 13px 0px;
+}
+.modal-desc input {
+  width: 100%;
+  margin-top: 10px;
+}
+.item-list h3 {
+  margin: 30px 0px 20px 0px;
+}
+.item-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.item-info p {
+  margin-bottom: 10px;
+}
+.item-qty {
+  width: 50%;
+}
+.item-qty input {
+  width: 100%;
+}
+.item-list .item-bin {
+  background-color: #fff;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+.item-list i {
+  font-size: 19px;
+}
+
+.add-item {
+  margin: 20px 0px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.delete-btn {
+  color: var(--accent-color);
+}
+.delete-btn:hover {
+  background-color: black;
+}
+
+.draft-btn {
+  background-color: rgb(41, 44, 60);
+  color: rgb(126 136 195);
+}
+.draft-btn:hover {
+  background-color: black;
+}
+
+.send-btn {
+  background-color: var(--accent-color-2);
+  color: #fff;
+}
+.send-btn:hover {
+  background-color: rgba(188, 172, 254, 0.537);
+}
+/* Modal End */
+
+/* EDIT MODAL */
+.edit-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 20, 20, 0.3);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: none;
+  overflow-y: scroll;
+}
+.re-send-btn {
+  background-color: var(--accent-color-2);
+  color: #fff;
+}
+.re-send-btn:hover {
+  background-color: rgba(188, 172, 254, 0.537);
+}
+
+/* EDIT MODAL END */
+
+a {
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  background-color: #f1efef;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.left-panel {
+  width: 140px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(55 59 83);
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.panel-logo {
+  background-color: var(--accent-color-2);
+  padding: 50px;
+  border-top-right-radius: 30px;
+}
+
+.theme-mode i {
+  color: rgb(126 136 195);
+  font-size: 30px;
+}
+
+.prof-pic {
+  padding: 50px 80px;
+  border-top: 1px solid white;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 200px 20px 0px 0px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header-title h1 {
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.header-title p {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.filter-action {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.filter-action i {
+  color: var(--accent-color-2);
+  font-size: 25px;
+}
+
+.filter-drop-down {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px 40px 10px 5px;
+  border-radius: 10px;
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  display: none;
+  cursor: pointer;
+}
+
+.drop {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 8px;
+}
+
+.drop input {
+  outline: none;
+  border: none;
+  background-color: grey;
+}
+
+.drop p {
+  font-weight: 600;
+  color: rgb(41, 40, 40);
+}
+
+.filter-action:hover .filter-drop-down {
+  display: block;
+}
+
+.button-action button {
+  padding: 20px 30px;
+  color: white;
+  background-color: rgb(124 93 250);
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 70px;
+  border: none;
+  cursor: pointer;
+}
+
+.invoice-container {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.invoice-container a {
+  color: black;
+}
+.invoice-link {
+  text-decoration: none;
+}
+
+.invoice {
+  background-color: white;
+  padding: 35px;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invoice-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.invoice-id {
+  display: flex;
+  align-items: center;
+}
+
+.invoice-id h4 {
+  font-weight: 800;
+  font-size: 18px;
+}
+.invoice-id span {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.due-date {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.order-name {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.invoice-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.invoice-amount h4 {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.invoice-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 13px;
+  border-radius: 8px;
+}
+
+.invoice-status .dot {
+  font-size: 6px;
+  font-weight: 700;
+}
+
+.invoice-status p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.no-inv {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.no-inv h3 {
+  padding-left: 60px;
+}
+
+/* INVOICE DETAILS */
+.main-details-content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 200px 20px 0px 0px;
+  margin: auto;
+}
+
+.back {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.back i {
+  font-size: 25px;
+}
+.back p {
+  color: black;
+  font-weight: 700;
+}
+.back p:hover {
+  color: #373b53;
+}
+
+.status-actions {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.status h4 {
+  color: var(--accent-color);
+  font-weight: 400;
+}
+
+.status-btns button {
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.edit-invoice {
+  color: var(--accent-color) !important;
+  background-color: rgb(223 227 250);
+}
+.edit-invoice:hover {
+  background-color: #f1efef;
+}
+.delete-invoice {
+  background-color: rgb(236 87 87);
+}
+.delete-invoice:hover {
+  background-color: var(--accent-color-2);
+}
+.mark-as-paid {
+  background-color: var(--accent-color-2);
+}
+.mark-as-paid:hover {
+  background-color: rgba(124, 93, 250, 0.433);
+}
+
+.all-details {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.all-details-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-top {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.info-top p {
+  color: var(--accent-color-3);
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.top-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.info-bottom {
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-bottom p {
+  color: var(--accent-color-3);
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.details-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.details-dates h4 {
+  margin-top: 8px;
+}
+
+.client-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.client-mail p {
+  margin-bottom: 8px;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f9fafe;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.item-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item-details h5 {
+  color: var(--accent-color-3);
+  font-weight: 500;
+}
+.item-details h4 {
+  font-weight: 700;
+}
+
+.item-details p {
+  color: var(--accent-color-3);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.amount-details {
+  color: #dfe3fa;
+  background-color: #373b53;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.amount-details h5,
+.amount-details h2 {
+  font-weight: 500;
+}
+
+.invoice-status.paid {
+  color: rgb(9, 223, 116);
+  background-color: rgba(92, 185, 138, 0.549);
+}
+
+.invoice-status.paid .dot {
+  color: rgb(9, 223, 116);
+}
+
+/* PENDING */
+.invoice-status.pending {
+  background-color: rgba(255, 145, 0, 0.15);
+  color: rgb(255, 145, 0);
+}
+
+.invoice-status.pending .dot {
+  color: rgb(255, 145, 0);
+}
+
+/* DRAFT */
+.invoice-status.draft {
+  background-color: rgba(128, 128, 128, 0.15);
+  color: rgb(128, 128, 128);
+}
+
+.invoice-status.draft .dot {
+  color: rgb(128, 128, 128);
+}

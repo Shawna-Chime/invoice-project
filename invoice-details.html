@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="media-query.css" />
+  </head>
+  <body>
+    <div class="edit-modal">
+      <div class="modal-content">
+        <form id="edit-invoice-form">
+          <div class="modal-title">
+            <h2>Edit Invoice</h2>
+          </div>
+          <div class="invoice-info">
+            <div class="bill-from">
+              <h4>Bill From</h4>
+              <div class="from-street-addr">
+                <p>Street Address</p>
+                <input type="text" id="edit-from-street" />
+              </div>
+              <div class="from-rest-addr">
+                <div>
+                  <p>City</p>
+                  <input type="text" name="" id="edit-from-city" />
+                </div>
+                <div>
+                  <p>Post Code</p>
+                  <input type="text" name="" id="edit-from-post" />
+                </div>
+                <div>
+                  <p>Country</p>
+                  <input type="text" name="" id="edit-from-country" />
+                </div>
+              </div>
+            </div>
+            <div class="bill-to">
+              <h4>Bill To</h4>
+              <div class="client-info">
+                <p>Client's Name</p>
+                <input type="text" name="" id="edit-client-name" />
+                <br />
+                <br />
+                <p>Client's Email</p>
+                <input type="text" name="" id="edit-client-email" />
+              </div>
+              <div class="to-street-addr">
+                <p>Street Address</p>
+                <input type="text" id="edit-to-street" />
+              </div>
+              <div class="to-rest-addr">
+                <div>
+                  <p>City</p>
+                  <input type="text" name="" id="edit-to-city" />
+                </div>
+                <div>
+                  <p>Post Code</p>
+                  <input type="text" name="" id="edit-to-post" />
+                </div>
+                <div>
+                  <p>Country</p>
+                  <input type="text" name="" id="edit-to-country" />
+                </div>
+              </div>
+            </div>
+            <div class="date-terms-desc">
+              <div class="date-terms">
+                <div class="modal-date">
+                  <p>Invoice Date</p>
+                  <input type="date" name="" id="edit-invoice-date" />
+                </div>
+                <div class="modal-terms">
+                  <p>Payment Terms</p>
+                  <select name="payment-terms" class="edit-payment-date">
+                    <option value="1">Next 1 Day</option>
+                    <option value="7">Next 7 Days</option>
+                    <option value="14">Next 14 Days</option>
+                    <option value="30">Next 30 Days</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-desc">
+                <p>Project Description</p>
+                <input type="text" name="" id="edit-project-desc" />
+              </div>
+            </div>
+          </div>
+          <div class="item-list">
+            <h3>Item List</h3>
+            <div class="item-info">
+              <div>
+                <p>Item Name</p>
+                <input type="text" name="" id="edit-item-name" />
+              </div>
+              <div class="item-qty">
+                <p>Qty.</p>
+                <input type="number" name="" id="edit-item-qty" />
+              </div>
+              <div>
+                <p>Price</p>
+                <input type="number" name="" id="edit-item-price" />
+              </div>
+              <div>
+                <p>Total</p>
+                <input disabled type="number" name="" id="total" />
+              </div>
+              <button class="item-bin">
+                <i class="ri-delete-bin-5-fill"></i>
+              </button>
+            </div>
+            <button type="button" class="add-item">
+              <i class="ri-add-fill"></i> Add New Item
+            </button>
+          </div>
+          <div class="modal-buttons">
+            <div class="modal-cancel">
+              <button type="button" class="cancel-btn">Cancel</button>
+            </div>
+            <div class="edit-modal-save">
+              <button class="re-send-btn">Save & Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <main>
+      <div class="left-panel">
+        <div class="panel-logo">
+          <img src="/image.webp" alt="" />
+        </div>
+        <div class="theme-mode">
+          <i class="ri-moon-fill"></i>
+        </div>
+        <div class="prof-pic">
+          <img src="/image (1).webp" alt="" />
+        </div>
+      </div>
+      <div class="main-details-content">
+        <div>
+          <a class="back" href="./index.html">
+            <i class="ri-arrow-left-s-fill"></i>
+            <p>Go Back</p>
+          </a>
+        </div>
+        <div class="status-actions">
+          <div class="status">
+            <h4>Status</h4>
+            <div class="invoice-status">
+              <p class="dot"><i class="ri-circle-fill"></i></p>
+              <p class="status-result"></p>
+            </div>
+          </div>
+          <div class="status-btns">
+            <button class="edit-invoice">Edit</button>
+            <button class="delete-invoice">Delete</button>
+            <button class="mark-as-paid">Mark As Paid</button>
+          </div>
+        </div>
+        <div class="inner-invoice">
+          <div class="all-details">
+            <div class="all-details-info">
+              <div class="info-top">
+                <div class="top-left">
+                  <div class="invoice-id">
+                    <span>#</span>
+                    <h4>ID</h4>
+                  </div>
+                  <p class="invoice-desc">Description</p>
+                </div>
+                <div class="top-right">
+                  <p>Street Address</p>
+                  <p>City</p>
+                  <p>Post Code</p>
+                  <p>Country</p>
+                </div>
+              </div>
+              <div class="info-bottom">
+                <div class="details-dates">
+                  <div>
+                    <p>Invoice Date</p>
+                    <h4>Date/1</h4>
+                  </div>
+                  <div>
+                    <p>Payment Due</p>
+                    <h4>Date/2</h4>
+                  </div>
+                </div>
+                <div class="client-details">
+                  <p>Bill To</p>
+                  <h4>Client Name</h4>
+                  <p>City</p>
+                  <p>Post Code</p>
+                  <p>Country</p>
+                </div>
+                <div class="client-mail">
+                  <p>Sent To</p>
+                  <h4>Email@mail.com</h4>
+                </div>
+              </div>
+            </div>
+            <div class="item-container">
+              <div class="item-details">
+                <div>
+                  <h5>Item Name</h5>
+                  <h4>Name</h4>
+                </div>
+                <div>
+                  <h5>QTY.</h5>
+                  <p>100</p>
+                </div>
+                <div>
+                  <h5>Price</h5>
+                  <p><span>$</span> 1,000</p>
+                </div>
+                <div>
+                  <h5>Total</h5>
+                  <h4><span>$</span> 100,000.00</h4>
+                </div>
+              </div>
+              <div class="amount-details">
+                <h5>Amount Due</h5>
+                <h2><span>$</span> 100,000.00</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./invoice-details.js"></script>
+  </body>
+</html>
