@@ -138,3 +138,4 @@ console.log(invoices);
 if (invoices.length === 0) {
   document.querySelector(".no-inv").style.display = "block";
 }
+generateInvoices(invoices);
