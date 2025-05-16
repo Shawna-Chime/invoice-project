@@ -131,7 +131,6 @@ const generateInvoices = (invoices) => {
     `;
   });
   list.innerHTML = invoiceList.join("");
-  location.reload();
 };
 generateInvoices(invoices);
 console.log(invoices);
