@@ -7,6 +7,29 @@ let submit = document.querySelector(".send-btn");
 let list = document.querySelector(".invoice-container");
 let invoiceLength = document.querySelector("#invoice-length");
 let addNewItem = document.querySelector(".add-item");
+let themeBtnDark = document.querySelector(".ri-moon-fill");
+let themeBtnLight = document.querySelector(".ri-sun-fill");
+let main = document.querySelector("main");
+let mainContent = document.querySelector(".main-content");
+
+themeBtnDark.addEventListener("click", () => {
+  mainContent.style.backgroundColor = "black";
+  mainContent.style.color = "white";
+  main.style.backgroundColor = "black";
+  main.style.color = "white";
+
+  themeBtnDark.style.display = "none";
+  themeBtnLight.style.display = "block";
+});
+themeBtnLight.addEventListener("click", () => {
+  mainContent.style.backgroundColor = "#f1efef";
+  mainContent.style.color = "black";
+  main.style.backgroundColor = "#f1efef";
+  main.style.color = "black";
+
+  themeBtnDark.style.display = "block";
+  themeBtnLight.style.display = "none";
+});
 
 newInvoice.addEventListener("click", () => {
   modal.style.display = "block";
@@ -18,6 +41,11 @@ discard.addEventListener("click", () => {
 
 let invoices = JSON.parse(localStorage.getItem("invoices")) || [];
 
+if (invoices.length === 0) {
+  document.querySelector(".no-inv").style.display = "block";
+} else {
+  document.querySelector(".no-inv").style.display = "none";
+}
 console.log(invoices);
 
 invoiceLength.innerHTML = invoices.length;
@@ -135,7 +163,4 @@ const generateInvoices = (invoices) => {
 generateInvoices(invoices);
 console.log(invoices);
 
-if (invoices.length === 0) {
-  document.querySelector(".no-inv").style.display = "block";
-}
 generateInvoices(invoices);

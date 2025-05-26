@@ -210,6 +210,7 @@ main {
   display: flex;
   background-color: #f1efef;
   height: 100vh;
+  width: 100%;
   overflow-y: scroll;
 }
 
@@ -234,6 +235,11 @@ main {
 .theme-mode i {
   color: rgb(126 136 195);
   font-size: 30px;
+  cursor: pointer;
+}
+
+.ri-sun-fill {
+  display: none;
 }
 
 .prof-pic {
